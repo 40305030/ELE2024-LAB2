@@ -54,7 +54,7 @@ overall_tf = ctrl.feedback(transfer_function_F2x3, transfer_function_pid)
 t_final = 1
 num_points = 500
 t_imp, x3_imp = ctrl.impulse_response(overall_tf, T=np.linspace(0, t_final, num_points))
-
+degree = (180/np.pi)*x3_imp
 import matplotlib.pyplot as plt
 plt.plot(t_imp, x3_imp)
 plt.xlabel('Time (s)')
